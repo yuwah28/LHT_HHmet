@@ -1,0 +1,593 @@
+[?1034h************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.4.0.beta            2016-04-06         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+load MG5 configuration from ../input/mg5_configuration.txt 
+None does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+lhapdf-config does not seem to correspond to a valid lhapdf-config executable. 
+Please set the 'lhapdf' variable to the (absolute) /PATH/TO/lhapdf-config (including lhapdf-config).
+Note that you can still compile and run aMC@NLO with the built-in PDFs
+ MG5_aMC> set lhapdf /PATH/TO/lhapdf-config
+
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+Using default eps viewer "evince". Set another one in ./input/mg5_configuration.txt
+Using default web browser "firefox". Set another one in ./input/mg5_configuration.txt
+import /phys/groups/tev/scratch4/users/paklim/MG5_aMC_v2_4_0_beta/MyHH/PATHhh
+The import format was not given, so we guess it as command
+import model LHT3v05my
+INFO: Change particles name to pass to MG5 convention 
+Defined multiparticle p = g u c d s u~ c~ d~ s~
+Defined multiparticle j = g u c d s u~ c~ d~ s~
+Defined multiparticle l+ = e+ mu+
+Defined multiparticle l- = e- mu-
+Defined multiparticle vl = ve vm vt
+Defined multiparticle vl~ = ve~ vm~ vt~
+Defined multiparticle all = g a ve vm vt ve~ vm~ vt~ u c t d s b uh ch th dh sh bh thodd theven u~ c~ t~ d~ s~ b~ uh~ ch~ th~ dh~ sh~ bh~ thodd~ theven~ z w+ h ah zh wh+ phi0 phip phi+ phi++ w- wh- phi- phi-- e- mu- ta- veh vmh vth eh- muh- tah- e+ mu+ ta+ veh~ vmh~ vth~ eh+ muh+ tah+
+define p = g d d~ u u~
+Defined multiparticle p = g d u d~ u~
+define q = d d~ u u~ s s~ c c~ b b~
+Defined multiparticle q = d u s c b d~ u~ s~ c~ b~
+define qh = dh dh~ uh uh~ sh sh~ ch ch~
+Defined multiparticle qh = dh uh sh ch dh~ uh~ sh~ ch~
+generated p p > qh qh QED=2 QCD=2, (qh > zh q, (zh > h ah, h > b b~)), (qh > zh q, (zh > h ah, h > b b~))
+[1;34mCommand "generated" not recognized, please try again[0m
+add process p p > zh zh, (zh > h ah, h > b b~)
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying coupling order WEIGHTED<=4: WEIGTHED IS 2*QED+QCD 
+INFO: Trying process: g g > zh zh WEIGHTED<=4 @1  
+INFO: Trying process: d d~ > zh zh WEIGHTED<=4 @1  
+INFO: Process has 5 diagrams 
+INFO: Trying process: u u~ > zh zh WEIGHTED<=4 @1  
+INFO: Process has 3 diagrams 
+INFO: Process d~ d > zh zh added to mirror process d d~ > zh zh 
+INFO: Process u~ u > zh zh added to mirror process u u~ > zh zh 
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying coupling order WEIGHTED<=2: WEIGTHED IS 2*QED+QCD 
+INFO: Trying process: zh > h ah WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying coupling order WEIGHTED<=2: WEIGTHED IS 2*QED+QCD 
+INFO: Trying process: h > b b~ WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+1 processes with 10 diagrams generated in 0.299 s
+Total: 1 processes with 10 diagrams
+add process p p > zh qh, (zh > h ah, h > b b~), (qh > zh q, (zh > h ah, h > b b~))
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying coupling order WEIGHTED<=3: WEIGTHED IS 2*QED+QCD 
+INFO: Trying process: g d > zh dh WEIGHTED<=3 @2  
+INFO: Process has 2 diagrams 
+INFO: Trying process: g d > zh sh WEIGHTED<=3 @2  
+INFO: Process has 2 diagrams 
+INFO: Trying process: g u > zh uh WEIGHTED<=3 @2  
+INFO: Process has 2 diagrams 
+INFO: Trying process: g u > zh ch WEIGHTED<=3 @2  
+INFO: Trying process: g d~ > zh dh~ WEIGHTED<=3 @2  
+INFO: Process has 2 diagrams 
+INFO: Trying process: g d~ > zh sh~ WEIGHTED<=3 @2  
+INFO: Process has 2 diagrams 
+INFO: Trying process: g u~ > zh uh~ WEIGHTED<=3 @2  
+INFO: Process has 2 diagrams 
+INFO: Trying process: g u~ > zh ch~ WEIGHTED<=3 @2  
+INFO: Process d g > zh dh added to mirror process g d > zh dh 
+INFO: Process d g > zh sh added to mirror process g d > zh sh 
+INFO: Process u g > zh uh added to mirror process g u > zh uh 
+INFO: Process d~ g > zh dh~ added to mirror process g d~ > zh dh~ 
+INFO: Process d~ g > zh sh~ added to mirror process g d~ > zh sh~ 
+INFO: Process u~ g > zh uh~ added to mirror process g u~ > zh uh~ 
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying coupling order WEIGHTED<=2: WEIGTHED IS 2*QED+QCD 
+INFO: Trying process: zh > h ah WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying coupling order WEIGHTED<=2: WEIGTHED IS 2*QED+QCD 
+INFO: Trying process: h > b b~ WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying coupling order WEIGHTED<=2: WEIGTHED IS 2*QED+QCD 
+INFO: Trying process: dh > zh d WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Trying process: dh > zh s WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Trying process: dh > zh b WEIGHTED<=2  
+INFO: Trying process: uh > zh u WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Trying process: uh > zh c WEIGHTED<=2  
+INFO: Trying process: sh > zh d WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Trying process: sh > zh s WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Trying process: sh > zh b WEIGHTED<=2  
+INFO: Trying process: ch > zh u WEIGHTED<=2  
+INFO: Trying process: ch > zh c WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Trying process: dh~ > zh d~ WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Trying process: dh~ > zh s~ WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Trying process: dh~ > zh b~ WEIGHTED<=2  
+INFO: Trying process: uh~ > zh u~ WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Trying process: uh~ > zh c~ WEIGHTED<=2  
+INFO: Trying process: sh~ > zh d~ WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Trying process: sh~ > zh s~ WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Trying process: sh~ > zh b~ WEIGHTED<=2  
+INFO: Trying process: ch~ > zh u~ WEIGHTED<=2  
+INFO: Trying process: ch~ > zh c~ WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying coupling order WEIGHTED<=2: WEIGTHED IS 2*QED+QCD 
+INFO: Trying process: zh > h ah WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+INFO: Checking for minimal orders which gives processes. 
+INFO: Please specify coupling orders to bypass this step. 
+INFO: Trying coupling order WEIGHTED<=2: WEIGTHED IS 2*QED+QCD 
+INFO: Trying process: h > b b~ WEIGHTED<=2  
+INFO: Process has 1 diagrams 
+[1;34mWARNING: [1;31m Decay without corresponding particle in core process found.
+Decay information for particle(s) ch,ch is discarded.
+Please check your process definition carefully. 
+This warning usually means that you forgot parentheses in presence of subdecay.
+Example of correct syntax: p p > t t~, ( t > w+ b, w+ > l+ vl) [0m
+1 processes with 26 diagrams generated in 0.477 s
+Total: 2 processes with 36 diagrams
+output testhh
+INFO: directory /phys/groups/tev/scratch4/users/paklim/MG5_aMC_v2_4_0_beta/MyHH/testhh already exists.
+If you continue this directory will be deleted and replaced.
+Do you want to continue? [[4my[0m, n]
+[1;34mThe answer to the previous question is not set in your input file[0m
+[1;34mUse y value[0m
+INFO: initialize a new directory: testhh 
+INFO: remove old information in testhh 
+INFO: Organizing processes into subprocess groups 
+INFO: Organizing processes into subprocess groups 
+INFO: Organizing processes into subprocess groups 
+INFO: Organizing processes into subprocess groups 
+INFO: Generating Helas calls for process: g d > zh dh WEIGHTED<=3 @2 
+INFO: Generating Helas calls for process: g d > zh sh WEIGHTED<=3 @2 
+INFO: Generating Helas calls for process: g u > zh uh WEIGHTED<=3 @2 
+INFO: Generating Helas calls for process: g d~ > zh dh~ WEIGHTED<=3 @2 
+INFO: Generating Helas calls for process: g d~ > zh sh~ WEIGHTED<=3 @2 
+INFO: Generating Helas calls for process: g u~ > zh uh~ WEIGHTED<=3 @2 
+INFO: Generating Helas calls for process: zh > h ah WEIGHTED<=2 
+INFO: Generating Helas calls for process: h > b b~ WEIGHTED<=2 
+INFO: Generating Helas calls for process: dh > zh d WEIGHTED<=2 
+INFO: Generating Helas calls for process: dh > zh s WEIGHTED<=2 
+INFO: Generating Helas calls for process: uh > zh u WEIGHTED<=2 
+INFO: Generating Helas calls for process: sh > zh d WEIGHTED<=2 
+INFO: Generating Helas calls for process: sh > zh s WEIGHTED<=2 
+INFO: Generating Helas calls for process: dh~ > zh d~ WEIGHTED<=2 
+INFO: Generating Helas calls for process: dh~ > zh s~ WEIGHTED<=2 
+INFO: Generating Helas calls for process: uh~ > zh u~ WEIGHTED<=2 
+INFO: Generating Helas calls for process: sh~ > zh d~ WEIGHTED<=2 
+INFO: Generating Helas calls for process: sh~ > zh s~ WEIGHTED<=2 
+INFO: Generating Helas calls for process: zh > h ah WEIGHTED<=2 
+INFO: Generating Helas calls for process: h > b b~ WEIGHTED<=2 
+INFO: Combine zh > h ah WEIGHTED<=2 with decays h > b b~ WEIGHTED<=2 
+INFO: Combine zh > h ah WEIGHTED<=2 with decays h > b b~ WEIGHTED<=2 
+INFO: Combine dh > zh d WEIGHTED<=2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine dh > zh s WEIGHTED<=2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine uh > zh u WEIGHTED<=2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine sh > zh d WEIGHTED<=2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine sh > zh s WEIGHTED<=2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine dh~ > zh d~ WEIGHTED<=2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine dh~ > zh s~ WEIGHTED<=2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine uh~ > zh u~ WEIGHTED<=2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine sh~ > zh d~ WEIGHTED<=2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine sh~ > zh s~ WEIGHTED<=2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine g d > zh dh WEIGHTED<=3 @2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, dh > zh d WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine g d > zh dh WEIGHTED<=3 @2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, dh > zh s WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine g d > zh sh WEIGHTED<=3 @2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, sh > zh d WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine g d > zh sh WEIGHTED<=3 @2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, sh > zh s WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine g u > zh uh WEIGHTED<=3 @2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, uh > zh u WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine g d~ > zh dh~ WEIGHTED<=3 @2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, dh~ > zh d~ WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine g d~ > zh dh~ WEIGHTED<=3 @2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, dh~ > zh s~ WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine g d~ > zh sh~ WEIGHTED<=3 @2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, sh~ > zh d~ WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine g d~ > zh sh~ WEIGHTED<=3 @2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, sh~ > zh s~ WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine g u~ > zh uh~ WEIGHTED<=3 @2 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, uh~ > zh u~ WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Processing color information for process: g d > zh dh @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: dh > zh d WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Reusing existing color information for process: g d > zh dh @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: dh > zh s WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Reusing existing color information for process: g d > zh sh @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: sh > zh d WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Reusing existing color information for process: g d > zh sh @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: sh > zh s WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Reusing existing color information for process: g u > zh uh @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: uh > zh u WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Processing color information for process: g d~ > zh dh~ @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: dh~ > zh d~ WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Reusing existing color information for process: g d~ > zh dh~ @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: dh~ > zh s~ WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Reusing existing color information for process: g d~ > zh sh~ @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: sh~ > zh d~ WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Reusing existing color information for process: g d~ > zh sh~ @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: sh~ > zh s~ WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Reusing existing color information for process: g u~ > zh uh~ @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: uh~ > zh u~ WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Generating Helas calls for process: d d~ > zh zh WEIGHTED<=4 @1 
+INFO: Generating Helas calls for process: u u~ > zh zh WEIGHTED<=4 @1 
+INFO: Generating Helas calls for process: zh > h ah WEIGHTED<=2 
+INFO: Generating Helas calls for process: h > b b~ WEIGHTED<=2 
+INFO: Combine zh > h ah WEIGHTED<=2 with decays h > b b~ WEIGHTED<=2 
+INFO: Combine d d~ > zh zh WEIGHTED<=4 @1 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Combine u u~ > zh zh WEIGHTED<=4 @1 with decays zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2, zh > h ah WEIGHTED<=2
+  Decay: h > b b~ WEIGHTED<=2 
+INFO: Processing color information for process: d d~ > zh zh @1
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Processing color information for process: u u~ > zh zh @1
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Creating files in directory P2_gd_zhdh_zh_hah_h_bbx_dh_zhd_zh_hah_h_bbx 
+INFO: Generating Feynman diagrams for Process: g d > zh dh WEIGHTED<=3 @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: dh > zh d WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Generating Feynman diagrams for Process: g d~ > zh dh~ WEIGHTED<=3 @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: dh~ > zh d~ WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Finding symmetric diagrams for subprocess group gd_zhdh_zh_hah_h_bbx_dh_zhd_zh_hah_h_bbx 
+INFO: Creating files in directory P2_gd_zhdh_zh_hah_h_bbx_dh_zhs_zh_hah_h_bbx 
+INFO: Generating Feynman diagrams for Process: g d > zh dh WEIGHTED<=3 @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: dh > zh s WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Generating Feynman diagrams for Process: g d~ > zh dh~ WEIGHTED<=3 @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: dh~ > zh s~ WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Finding symmetric diagrams for subprocess group gd_zhdh_zh_hah_h_bbx_dh_zhs_zh_hah_h_bbx 
+INFO: Creating files in directory P2_gd_zhsh_zh_hah_h_bbx_sh_zhd_zh_hah_h_bbx 
+INFO: Generating Feynman diagrams for Process: g d > zh sh WEIGHTED<=3 @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: sh > zh d WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Generating Feynman diagrams for Process: g d~ > zh sh~ WEIGHTED<=3 @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: sh~ > zh d~ WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Finding symmetric diagrams for subprocess group gd_zhsh_zh_hah_h_bbx_sh_zhd_zh_hah_h_bbx 
+INFO: Creating files in directory P2_gd_zhsh_zh_hah_h_bbx_sh_zhs_zh_hah_h_bbx 
+INFO: Generating Feynman diagrams for Process: g d > zh sh WEIGHTED<=3 @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: sh > zh s WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Generating Feynman diagrams for Process: g d~ > zh sh~ WEIGHTED<=3 @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: sh~ > zh s~ WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Finding symmetric diagrams for subprocess group gd_zhsh_zh_hah_h_bbx_sh_zhs_zh_hah_h_bbx 
+INFO: Creating files in directory P2_gu_zhuh_zh_hah_h_bbx_uh_zhu_zh_hah_h_bbx 
+INFO: Generating Feynman diagrams for Process: g u > zh uh WEIGHTED<=3 @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: uh > zh u WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Generating Feynman diagrams for Process: g u~ > zh uh~ WEIGHTED<=3 @2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: uh~ > zh u~ WEIGHTED<=2
+    Decay: zh > h ah WEIGHTED<=2
+      Decay: h > b b~ WEIGHTED<=2 
+INFO: Finding symmetric diagrams for subprocess group gu_zhuh_zh_hah_h_bbx_uh_zhu_zh_hah_h_bbx 
+INFO: Creating files in directory P1_ddx_zhzh_zh_hah_h_bbx_zh_hah_h_bbx 
+INFO: Generating Feynman diagrams for Process: d d~ > zh zh WEIGHTED<=4 @1
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Finding symmetric diagrams for subprocess group ddx_zhzh_zh_hah_h_bbx_zh_hah_h_bbx 
+INFO: Creating files in directory P1_uux_zhzh_zh_hah_h_bbx_zh_hah_h_bbx 
+INFO: Generating Feynman diagrams for Process: u u~ > zh zh WEIGHTED<=4 @1
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2
+  Decay: zh > h ah WEIGHTED<=2
+    Decay: h > b b~ WEIGHTED<=2 
+INFO: Finding symmetric diagrams for subprocess group uux_zhzh_zh_hah_h_bbx_zh_hah_h_bbx 
+History written to /phys/groups/tev/scratch4/users/paklim/MG5_aMC_v2_4_0_beta/MyHH/testhh/Cards/proc_card_mg5.dat
+Generated helas calls for 12 subprocesses (28 diagrams) in 0.507 s
+Wrote files for 220 helas calls in 3.436 s
+Export UFO model to MG4 format
+ALOHA: aloha creates FFV2 routines
+ALOHA: aloha creates VVS1 routines
+ALOHA: aloha creates FFV1 routines
+ALOHA: aloha creates FFS4 routines
+save configuration file to /phys/groups/tev/scratch4/users/paklim/MG5_aMC_v2_4_0_beta/MyHH/testhh/Cards/me5_configuration.txt
+INFO: Use Fortran compiler gfortran 
+INFO: Use c++ compiler g++ 
+INFO: Generate jpeg diagrams 
+INFO: Generate web pages 
+Output to directory /phys/groups/tev/scratch4/users/paklim/MG5_aMC_v2_4_0_beta/MyHH/testhh done.
+Type "launch" to generate events from this process, or see
+/phys/groups/tev/scratch4/users/paklim/MG5_aMC_v2_4_0_beta/MyHH/testhh/README
+Run "open index.html" to see more information about this process.
+launch testhh
+************************************************************
+*                                                          *
+*                      W E L C O M E to                    *
+*             M A D G R A P H 5 _ a M C @ N L O            *
+*                      M A D E V E N T                     *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 2.4.0.beta            2016-04-06         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************
+INFO: load configuration from /phys/groups/tev/scratch4/users/paklim/MG5_aMC_v2_4_0_beta/MyHH/testhh/Cards/me5_configuration.txt  
+INFO: load configuration from /phys/groups/tev/scratch4/users/paklim/MG5_aMC_v2_4_0_beta/input/mg5_configuration.txt  
+INFO: load configuration from /phys/groups/tev/scratch4/users/paklim/MG5_aMC_v2_4_0_beta/MyHH/testhh/Cards/me5_configuration.txt  
+Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+generate_events run_01
+[1;60mFor coherence 'pythia' is set to 'ON'[0m
+The following switches determine which programs are run:
+ 1 Run the pythia shower/hadronization:                              pythia=ON
+ 2 Run PGS as detector simulator:                                       pgs=OFF
+ 3 Run Delphes as detector simulator:                               delphes=ON
+ 4 Decay particles with the MadSpin module:                         madspin=OFF
+ 5 Add weights to the events based on changing model parameters:   reweight=OFF
+  Either type the switch number (1 to 5) to change its default setting,
+  or set any switch explicitly (e.g. type 'madspin=ON' at the prompt)
+  Type '0', 'auto', 'done' or just press enter when you are done.
+ [[4m0[0m, 1, 2, 3, 4, 5, auto, done, pythia=ON, ... ]
+[1;34mThe answer to the previous question is not set in your input file[0m
+[1;34mUse 0 value[0m
+INFO: copy /phys/groups/tev/scratch4/users/paklim/MG5_aMC_v2_4_0_beta/MyCards/delphes_card_CMS3.dat as delphes_card.dat 
+set nevents 50000
+INFO: modify parameter nevents of the run_card.dat to 50000 
+set iseed 0
+INFO: modify parameter iseed of the run_card.dat to 0 
+Generating 50000 events with run name run_01
+survey  run_01 
+INFO: compile directory 
+compile Source Directory
+Using random number seed offset = 21
+INFO: Running Survey 
+Creating Jobs
+Working on SubProcesses
+INFO:     P2_gd_zhdh_zh_hah_h_bbx_dh_zhd_zh_hah_h_bbx  
+INFO:     P2_gd_zhdh_zh_hah_h_bbx_dh_zhs_zh_hah_h_bbx  
+INFO:     P2_gd_zhsh_zh_hah_h_bbx_sh_zhd_zh_hah_h_bbx  
+INFO:     P2_gd_zhsh_zh_hah_h_bbx_sh_zhs_zh_hah_h_bbx  
+INFO:     P2_gu_zhuh_zh_hah_h_bbx_uh_zhu_zh_hah_h_bbx  
+INFO:     P1_ddx_zhzh_zh_hah_h_bbx_zh_hah_h_bbx  
+INFO:     P1_uux_zhzh_zh_hah_h_bbx_zh_hah_h_bbx  
+INFO:  Idle: 0,  Running: 13,  Completed: 10 [ current time: 13h44 ] 
+INFO:  Idle: 0,  Running: 10,  Completed: 13 [  3.7s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 23 [  5.6s  ] 
+INFO: End survey 
+refine 50000
+Creating Jobs
+INFO: Refine results to 50000 
+INFO: Generating 50000.0 unweigthed events. 
+INFO: Effective Luminosity 5792366.20377 pb^-1 
+INFO: need to improve 6 channels 
+Current estimate of cross-section: 0.0103584611002 +- 9.72236997545e-05
+    P2_gd_zhdh_zh_hah_h_bbx_dh_zhd_zh_hah_h_bbx 
+    P2_gd_zhdh_zh_hah_h_bbx_dh_zhs_zh_hah_h_bbx 
+    P2_gd_zhsh_zh_hah_h_bbx_sh_zhd_zh_hah_h_bbx 
+    P2_gd_zhsh_zh_hah_h_bbx_sh_zhs_zh_hah_h_bbx 
+    P2_gu_zhuh_zh_hah_h_bbx_uh_zhu_zh_hah_h_bbx 
+    P1_ddx_zhzh_zh_hah_h_bbx_zh_hah_h_bbx 
+    P1_uux_zhzh_zh_hah_h_bbx_zh_hah_h_bbx 
+INFO:  Idle: 46,  Running: 16,  Completed: 0 [ current time: 13h45 ] 
+INFO:  Idle: 45,  Running: 16,  Completed: 1 [  10s  ] 
+INFO:  Idle: 37,  Running: 16,  Completed: 9 [  15.2s  ] 
+INFO:  Idle: 30,  Running: 16,  Completed: 16 [  26s  ] 
+INFO:  Idle: 26,  Running: 16,  Completed: 20 [  29.7s  ] 
+INFO:  Idle: 15,  Running: 16,  Completed: 31 [  39.3s  ] 
+INFO:  Idle: 12,  Running: 16,  Completed: 34 [  44.4s  ] 
+INFO:  Idle: 9,  Running: 16,  Completed: 37 [  47.6s  ] 
+INFO:  Idle: 0,  Running: 15,  Completed: 47 [  56.1s  ] 
+INFO:  Idle: 0,  Running: 12,  Completed: 50 [  1m 0s  ] 
+INFO:  Idle: 0,  Running: 7,  Completed: 55 [  1m 4s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 62 [  1m 16s  ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 62 [  1m 16s  ] 
+INFO: Combining runs 
+INFO: finish refine 
+refine 50000
+Creating Jobs
+INFO: Refine results to 50000 
+INFO: Generating 50000.0 unweigthed events. 
+INFO: Effective Luminosity 5746448.80705 pb^-1 
+INFO: need to improve 0 channels 
+Current estimate of cross-section: 0.0104412311002 +- 1.58756169728e-05
+    P2_gd_zhdh_zh_hah_h_bbx_dh_zhd_zh_hah_h_bbx 
+    P2_gd_zhdh_zh_hah_h_bbx_dh_zhs_zh_hah_h_bbx 
+    P2_gd_zhsh_zh_hah_h_bbx_sh_zhd_zh_hah_h_bbx 
+    P2_gd_zhsh_zh_hah_h_bbx_sh_zhs_zh_hah_h_bbx 
+    P2_gu_zhuh_zh_hah_h_bbx_uh_zhu_zh_hah_h_bbx 
+    P1_ddx_zhzh_zh_hah_h_bbx_zh_hah_h_bbx 
+    P1_uux_zhzh_zh_hah_h_bbx_zh_hah_h_bbx 
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 13h46 ] 
+INFO:  Idle: 0,  Running: 0,  Completed: 0 [ current time: 13h46 ] 
+INFO: Combining runs 
+INFO: finish refine 
+combine_events
+INFO: Combining Events 
+  === Results Summary for run: run_01 tag: tag_1 ===
+
+     Cross-section :   0.01044 +- 1.588e-05 pb
+     Nb of events :  50000
+ 
+running syscalc on mode parton
+store_events
+INFO: Storing parton level results 
+INFO: End Parton 
+reweight -from_cards
+decay_events -from_cards
+INFO: Running Pythia 
+INFO: Creating shower LHE File (for plot) 
+INFO: Warning! Never use this lhe file for detector studies! 
+running syscalc on mode Pythia
+INFO: finish 
+INFO: No pgs_card detected, so not run pgs 
+INFO: prepare delphes run 
+INFO: Running Delphes 
+INFO: delphes done 
+  === Results Summary for run: run_01 tag: tag_1 ===
+
+     Cross-section :   0.01044 +- 1.588e-05 pb
+     Nb of events :  50000
+ 
+INFO: storring files of previous run 
+INFO: Storing Pythia files of previous run 
+INFO: Done 
+quit
+INFO:  
+ 
+INFO:  
+ 
+more information in /phys/groups/tev/scratch4/users/paklim/MG5_aMC_v2_4_0_beta/MyHH/testhh/index.html
+quit
+ 
+
+ 
+
