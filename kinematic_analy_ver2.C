@@ -1,3 +1,6 @@
+// Author Pak.K Lim
+// Data May 21 2017
+// Code developed to analysis GenParticle data structure
 #include "TROOT.h"
 #include "TFile.h"
 #include "TH1.h"
@@ -24,7 +27,7 @@ int kinematic_analy_ver2(){
   // Set debug flag
   Int_t flag = 0;
 
-  TFile *fin=new TFile("/Users/yuwahlim/Desktop/DataChallenge/Cut_analysis/hhdata/1000k1/tag_1_delphes_events.root","READONLY");
+  TFile *fin=new TFile("/Users_Path_to_Data/hhdata/1000k1/tag_1_delphes_events.root","READONLY"); //analysis f=1000;k=1
   TFile *fout=new TFile("kinematics.root","RECREATE");
 
   // HISTOGRAM SETUP FOR GenParticle
@@ -82,8 +85,6 @@ int kinematic_analy_ver2(){
       if(PTCL_PID[j] == 25) { h_num +=1; }
       if(PTCL_PID[j] == 5 || PTCL_PID[j] == -5) { b_num +=1; }
     } 
-    //cout << "h_num " << h_num << endl;
-    //cout << "b_num " << b_num << endl;
     cout << "Running... event(" << ievent << ")" << endl;
 
     ///////////////////////////////////////////////////
@@ -124,7 +125,6 @@ int kinematic_analy_ver2(){
 	}
       }
     }
-    //cout << "** btag_ h_ num **" << " (" << btag_h_num << ")" << endl;
     if(btag_h_num == 4){ count +=1; }
     
     ///////////////////////////////////////////////////
@@ -170,6 +170,12 @@ int kinematic_analy_ver2(){
                                    PTCL_PHI[new_bindex[2]],PTCL_M[new_bindex[2]]);
         sub_b_vecs[1].SetPtEtaPhiM(PTCL_PT[new_bindex[3]],PTCL_ETA[new_bindex[3]], \
                                    PTCL_PHI[new_bindex[3]],PTCL_M[new_bindex[3]]);
+        if(flag == 2){
+          cout << "new bindex " <<  new_bindex[0] << " " << new_bindex[1] <<endl;
+          cout << "b propertie " << PTCL_PT[new_bindex[1]] << " "       \
+               << PTCL_ETA[new_bindex[1]] << " " << PTCL_PHI[new_bindex[1]] << " " \
+               << PTCL_M[new_bindex[1]] << endl;
+        }
       } else {
 
 	leading_hpt = PTCL_PT[new_hindex[2]];
@@ -183,16 +189,25 @@ int kinematic_analy_ver2(){
                                    PTCL_PHI[new_bindex[0]],PTCL_M[new_bindex[0]]);
         sub_b_vecs[1].SetPtEtaPhiM(PTCL_PT[new_bindex[1]],PTCL_ETA[new_bindex[1]], \
                                    PTCL_PHI[new_bindex[1]],PTCL_M[new_bindex[1]]);
+        if(flag == 2){
+          cout << "new bindex " <<  new_bindex[0] << " " << new_bindex[1] <<endl;
+          cout << "b propertie " << PTCL_PT[new_bindex[1]] << " "       \
+               << PTCL_ETA[new_bindex[1]] << " " << PTCL_PHI[new_bindex[1]] << " " \
+               << PTCL_M[new_bindex[1]] << endl;
+        }
       }
+      // Calculate bb separation //                                                                                
+      delta_R1 = abs(lead_b_vecs[0].DeltaR(lead_b_vecs[1]));
+      delta_R2 = abs(sub_b_vecs[0].DeltaR(sub_b_vecs[1]));
       // Fill histogram  //                                                              
       h_leading_pt->Fill(leading_hpt);
       h_subleading_pt->Fill(subleading_hpt);
       dR1_bb->Fill(delta_R1);
       dR2_bb->Fill(delta_R2);
     }
-    
 
-  } // end events
+	  
+  } // end of events
 
   fout->cd();
   h_leading_pt->Write();
