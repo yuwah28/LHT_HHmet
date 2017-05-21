@@ -1,3 +1,6 @@
+// Author Pak.K Lim
+// Data May 20 2017
+// Code developed to analysis GenParticle data structure
 #include "TROOT.h"
 #include "TFile.h"
 #include "TH1.h"
