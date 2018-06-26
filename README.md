@@ -1,1 +1,1 @@
-# LHT comprehensive study of hadronic decays
+# Comprehensive study of LHT hadronic decays
