@@ -1,1 +1,1 @@
-# LHT_HHmet
+# LHT comprehensive study of hadronic decays
